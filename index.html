@@ -35,7 +35,8 @@
             <input type="radio"
                 name="category"
                 id="category1"
-                value="business" />
+                value="business"
+                checked="checked" />
             <span class="bubble business"></span>
             <div>Business</div>
           </label>
@@ -56,39 +57,7 @@
 
     <section class="todo-list">
       <h3>TODO リスト</h3>
-      <div class="list" id="todo-list">
-        <div class="todo-item">
-          <label>
-            <input type="checkbox" />
-            <span class="bubble business"></span>
-          </label>
-
-          <div class="todo-content">
-            <input type="text" value="JSを学習する" readonly />
-          </div>
-
-          <div class="actions">
-            <button class="edit">Edit</button>
-            <button class="delete">Delete</button>
-          </div>
-        </div>
-
-        <div class="todo-item">
-          <label>
-            <input type="checkbox" />
-            <span class="bubble personal"></span>
-          </label>
-
-          <div class="todo-content">
-            <input type="text" value="瞑想: 5分" readonly />
-          </div>
-
-          <div class="actions">
-            <button class="edit">Edit</button>
-            <button class="delete">Delete</button>
-          </div>
-        </div>
-      </div>
+      <div class="list" id="todo-list"></div>
     </section>
   </main>
 
