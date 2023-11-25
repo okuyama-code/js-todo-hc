@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
     DisplayTodos();
   })
   DisplayTodos();
-})
+})  
 
 function DisplayTodos () {
   const todoList = document.querySelector('#todo-list');
@@ -109,9 +109,27 @@ function DisplayTodos () {
 
       DisplayTodos();
     })
+
+    edit.addEventListener('click', (e) => {
+      const input = content.querySelector('input');
+       // input要素のreadonly属性を削除し、フォーカスを当てる
+      input.removeAttribute('readonly');
+      input.focus();
+
+       // input要素がフォーカスを失ったときのblurイベントを追加
+      input.addEventListener('blur', (e) => {
+        input.setAttribute('readonly', true);
+        todo.content = e.target.value;
+
+        localStorage.setItem('todos', JSON.stringify(todos));
+        DisplayTodos();
+      })
+    })
+
   })
 
 }
+
 
 
 
