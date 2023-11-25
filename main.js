@@ -126,8 +126,25 @@ function DisplayTodos () {
       })
     })
 
-  })
+    deleteButton.addEventListener('click', (e) => {
+      if (confirm('本当に削除しますか？')) {
+        // tと一致したもの(選んだ要素が排除される)
+        todos = todos.filter(t => {
+          // フィルタリングの条件：tがtodoと一致しない場合
+          if (t !== todo) {
+              // deleteしたもの以外がconsoleに表示される
+              console.log(t);
+          }
+          // フィルタリング条件の結果を返す
+          // tがtodoと一致しないtodoたちが新しい配列に残る
+          return t !== todo;
+      });
 
+        localStorage.setItem('todos', JSON.stringify(todos));
+        DisplayTodos()
+      }
+    })
+  })
 }
 
 
